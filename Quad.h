@@ -17,7 +17,7 @@ typedef struct quads quad;
 
 quad *headQ, *nextQ, *tailQ;
 
-quad newQuad(char *op, char *arg1, char *arg2, char *res);
+quad * newQuad(char *op, char *arg1, char *arg2, char *res);
 void addQuad();
 void pushQuad(quad *nuevoQuad);
 void delQuad();

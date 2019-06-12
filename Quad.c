@@ -1,6 +1,7 @@
 #include "Quad.h"
+#include <stdlib.h>
 
-quad newQuad(char *op, char *arg1, char *arg2, char *res){
+quad * newQuad(char *op, char *arg1, char *arg2, char *res){
 
     quad *nuevoQuad =  (quad *)malloc(sizeof(quad));
 
@@ -22,11 +23,10 @@ void addQuad(char *op, char *arg1, char *arg2, char *res){
 void pushQuad(quad *nuevoQuad){
 
     if(headQ == NULL){
-
         headQ = nuevoQuad;
         tailQ = nuevoQuad;
         nuevoQuad->sigQ = NULL;
-        break;
+        return;
     }
     
     tailQ->sigQ = nuevoQuad;
@@ -41,7 +41,7 @@ void delQuad() {
 
     do{
 
-        tempQ = headQ
+        tempQ = headQ;
         headQ = headQ->sigQ;
         tempQ->sigQ = NULL;
         if(headQ == tailQ){

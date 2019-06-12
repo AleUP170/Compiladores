@@ -1,4 +1,5 @@
 #include "CodigoIntermedio.h"
+#include <stdlib.h>
 
 
 lista *newElement(int indice){

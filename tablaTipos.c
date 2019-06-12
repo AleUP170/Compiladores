@@ -1,5 +1,6 @@
 #include "tablaTipos.h"
 #include <string.h>
+#include <stdlib.h>
 
 void init_tableT() {
 	headT = NULL;
@@ -15,7 +16,7 @@ void init_tableT() {
 
 }
 
-tablaTipo *crear_Tipo(const char *tipo, int tipoBase, int tamanio, int dimension){
+tablaTipo *crear_Tipo(char *tipo, int tipoBase, int tamanio, int dimension){
 
     tablaTipo *nuevo_Tipo = (tablaTipo *)malloc(sizeof(tablaTipo));
 
@@ -79,28 +80,28 @@ tablaTipo *buscarTipo(int id){
     return 0; 
 }
 
-char *get_Tipo(const char *id){
+char *get_Tipo(int id){
 
     tablaTipo *cur = buscarTipo(id);
 
     return buscarTipo(id) ? (*cur).tipo : 0;
 }
 
-int get_TipoBase(const char *id){
+int get_TipoBase(int id){
 
     tablaTipo *cur = buscarTipo(id);
 
     return buscarTipo(id) ? (*cur).tipoBase : 0;
 }
 
-int get_Tamanio(const char *id){
+int get_Tamanio(int id){
 
     tablaTipo *cur = buscarTipo(id);
 
     return buscarTipo(id) ? (*cur).tamanio : 0;
 }
 
-int get_Dimension(const char *id){
+int get_Dimension(int id){
 
     tablaTipo *cur = buscarTipo(id);
 

@@ -48,4 +48,6 @@
 #define	EXPNUM  		48
 #define	ID				49
 #define	CONSCHAR  		50
-#define	CONSSTRING  	51	
+#define	CONSSTRING  	51
+#define FUNC            52
+#define POINT           53

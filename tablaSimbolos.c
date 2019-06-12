@@ -1,4 +1,6 @@
 #include "tablaSimbolos.h"
+#include <stdlib.h>
+#include <string.h>
 
 void init_tableS() {
 	head = NULL;
@@ -7,7 +9,7 @@ void init_tableS() {
     iD = 0;
 }
 
-void crear_Simbolo(const char *id, int tipo, char *tipoVar, int direccion, int tipoArgumts, int numArgumts, char *ambito){
+void crear_Simbolo(char *id, int tipo, char *tipoVar, int direccion, int tipoArgumts, int numArgumts, char *ambito){
 
     simboloTipo *nuevo_Simbolo = (simboloTipo *)malloc(sizeof(simboloTipo));
 
@@ -41,7 +43,7 @@ void insert_Simbolo(simboloTipo *nuevo_Simbolo){
         head = nuevo_Simbolo;
         anterior = nuevo_Simbolo;
         actual = nuevo_Simbolo;
-        break; 
+        return; 
     }
     anterior = head;
     actual = head;
@@ -81,7 +83,7 @@ void del_Simbolo(){
     actual = head;
 
     while(actual != NULL){
-        anterior = actual
+        anterior = actual;
         actual = actual->nextAmbito;
     }
 
@@ -111,11 +113,11 @@ void del_Simbolo(){
                     free(actual);
                 }            
             }while(actual != anterior);
-        }while (anterior->prevAmbito != null && anterior->next != null);
+        }while (anterior->prevAmbito != NULL && anterior->next != NULL);
     }while(head != NULL);
 }
 
-simboloTipo *buscar_Simbolo(const char *id){
+simboloTipo* buscar_Simbolo(char *id){
 
     anterior = head;
     actual = head;
@@ -133,60 +135,42 @@ simboloTipo *buscar_Simbolo(const char *id){
     return NULL;
 }
 
-simboloTipo searchSymbol(const char *id){
-
-    anterior = head;
-    actual = head;
-    do
-    {
-        while (actual != NULL){
-            if(strcmp(actual->id,id)){
-                return actual;
-            }
-            actual = actual->next;
-        }
-        anterior = anterior->nextAmbito;
-        actual = anterior; 
-    }while (anterior->nextAmbito != NULL);
-    return -1;
-}
-
-int get_Tipo(const char *id){
+int get_TipoSim(char *id){
 
     simboloTipo *cur = buscar_Simbolo(id);
 
     return buscar_Simbolo(id) ? (*cur).tipo : 0;
 }
 
-int get_Direccion(const char *id){
+int get_Direccion(char *id){
 
     simboloTipo *cur = buscar_Simbolo(id);
 
     return buscar_Simbolo(id) ? (*cur).direccion : 0;
 }
 
-int get_TipoArgumts(const char *id){
+int get_TipoArgumts(char *id){
 
     simboloTipo *cur = buscar_Simbolo(id);
 
     return buscar_Simbolo(id) ? (*cur).tipoArgumts : 0;
 }
 
-int get_numArgumts(const char *id){
+int get_numArgumts(char *id){
 
     simboloTipo *cur = buscar_Simbolo(id);
 
     return buscar_Simbolo(id) ? (*cur).numArgumts : 0;
 }
 
-char *get_TipoVar(const char *id){
+char *get_TipoVar(char *id){
 
     simboloTipo *cur = buscar_Simbolo(id);
 
     return buscar_Simbolo(id) ? (*cur).tipoVar : 0;
 }
 
-char *get_Ambitor(const char *id){
+char *get_Ambitor(char *id){
 
     simboloTipo *cur = buscar_Simbolo(id);
 

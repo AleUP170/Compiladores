@@ -18,7 +18,9 @@ tablaTipo *headT, *anteriorT, *actualT;
 
 int iDTipo;
 
-tablaTipo *crear_Tipo(const char *tipo, int tipoBase, int tamanio, int dimension);
+void init_tableT();
+
+tablaTipo *crear_Tipo(char *tipo, int tipoBase, int tamanio, int dimension);
 
 void insertarTipo(tablaTipo *nuevo_Tipo);
 
@@ -26,12 +28,12 @@ void borrarTipo();
 
 tablaTipo *buscarTipo(int id);
 
-char *get_Tipo(const char *id);
+char *get_Tipo(int id);
 
-int get_TipoBase(const char *id);
+int get_TipoBase(int id);
 
-int get_Tamanio(const char *id);
+int get_Tamanio(int id);
 
-int get_Dimension(const char *id);
+int get_Dimension(int id);
 
 #endif

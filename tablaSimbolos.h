@@ -25,22 +25,24 @@ simboloTipo *head, *anterior, *actual;
 
 int iD;
 
-void crear_Simbolo(const char *id, int tipo, char *tipoVar, int direccion, int tipoArgumts, int numArgumts, char *ambito);
+void init_tableS();
+
+void crear_Simbolo(char *id, int tipo, char *tipoVar, int direccion, int tipoArgumts, int numArgumts, char *ambito);
 
 void insert_Simbolo(simboloTipo *nuevo_Simbolo);
 
 void del_Simbolo();
 
-simboloTipo *buscar_Simbolo(const char *id);
+simboloTipo* buscar_Simbolo(char *id);
 
-int get_Tipo(const char *id);
+int get_TipoSim(char *id);
 
-int get_Direccion(const char *id);
+int get_Direccion(char *id);
 
-int get_TipoArgumts(const char *id);
+int get_TipoArgumts(char *id);
 
-int get_numArgumts(const char *id);
+int get_numArgumts(char *id);
 
-char *get_TipoVar(const char *id);
+char *get_TipoVar(char *id);
 
 #endif
